@@ -139,7 +139,7 @@ class Lambdasian {
 
 class Instructor extends Lambdasian {
   constructor(teacher) {
-    super(teacher)
+    super(teacher);
     this.specialty = teacher.specialty;
     this.favLanguage = teacher.favLanguage;
     this.catchPhrase = teacher.catchPhrase;
@@ -170,7 +170,7 @@ class Instructor extends Lambdasian {
 
 class Student extends Lambdasian {
    constructor (student) {
-    super(student)
+    super(student);
     this.previousBackground = student.previousBackground;
     this.className = student.className;
     this.favSubjects = student.favSubjects;
@@ -200,8 +200,18 @@ class Student extends Lambdasian {
         + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
 
-class ProjectManager {
-   
+class ProjectManager extends Instructor {
+   constructor (manager) {
+    super (manager);
+    this.gradClassName = manager.gradClassName;
+    this.favInstructor = manager.favInstructor;
+   }
+   standUp (channel) {
+    return `${this.name} announces to ${channel}, @channel standy times!`;
+   }
+   debugsCode (student, subject) {
+    return `${this.name} debugs ${student.name}'s code on ${subject}`;
+   }
 }
 
 /*
