@@ -58,7 +58,7 @@ class Person {
     this.stomach = [];
   }
   toString() {
-    return `${this.name}, ${this.age}`
+    return `${this.name}, ${this.age}`;
   }
 }
 
@@ -93,7 +93,7 @@ class Car {
     } else {
       this.odometer = this.odometer + this.tank * this.milesPerGallon;
       this.tank = 0;
-      return `I ran out of fuel at ${this.odometer} miles!`
+      return `I ran out of fuel at ${this.odometer} miles!`;
     }
   }
 }
@@ -118,7 +118,7 @@ class Lambdasian {
     this.location = student.location;
   }
   speak() {
-    return `Hello my name is ${this.name}, I am from ${this.location}`
+    return `Hello my name is ${this.name}, I am from ${this.location}`;
   }
 }
 
@@ -137,8 +137,19 @@ class Lambdasian {
         + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
 */
 
-class Instructor {
-
+class Instructor extends Lambdasian {
+  constructor(teacher) {
+    super(teacher)
+      this.specialty = teacher.specialty;
+      this.favLanguage = teacher.favLanguage;
+      this.catchPhrase = teacher.catchPhrase;
+  }
+  demo(subject) {
+    return `Today we are learning about ${subject}`;
+  }
+  grade(student, subject) {
+    return `${student.name} receives a perfect score on ${subject}`;
+  }
 }
 
 /*
