@@ -112,10 +112,10 @@ class Car {
 */
 
 class Lambdasian {
-  constructor(student) {
-    this.name = student.name;
-    this.age = student.age;
-    this.location = student.location;
+  constructor(lambdasian) {
+    this.name = lambdasian.name;
+    this.age = lambdasian.age;
+    this.location = lambdasian.location;
   }
   speak() {
     return `Hello my name is ${this.name}, I am from ${this.location}`;
@@ -140,9 +140,9 @@ class Lambdasian {
 class Instructor extends Lambdasian {
   constructor(teacher) {
     super(teacher)
-      this.specialty = teacher.specialty;
-      this.favLanguage = teacher.favLanguage;
-      this.catchPhrase = teacher.catchPhrase;
+    this.specialty = teacher.specialty;
+    this.favLanguage = teacher.favLanguage;
+    this.catchPhrase = teacher.catchPhrase;
   }
   demo(subject) {
     return `Today we are learning about ${subject}`;
@@ -168,8 +168,22 @@ class Instructor extends Lambdasian {
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
 
-class Student {
-   
+class Student extends Lambdasian {
+   constructor (student) {
+    super(student)
+    this.previousBackground = student.previousBackground;
+    this.className = student.className;
+    this.favSubjects = student.favSubjects;
+   }
+   listSubjects() {
+    return `Loving ${this.favSubjects}!`;
+   }
+   PRAssignment (subject) {
+    return `${this.name} has submitted a PR for ${subject}`;
+   }
+   sprintChallenge (subject) {
+    return `${this.name} has begun sprint challenge on ${subject}`;
+   }
 }
 
 /*
